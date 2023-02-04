@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PasswordGeneratorService } from './components/Services/passwordgenerator.service';
 import { Settings } from './types';
 
 @Component({
@@ -18,9 +19,10 @@ export class AppComponent {
     return { ...this.settings };
   }
   onClickGenerate(event: Event) {
-    this.password = 'Nouveau mot de passe';
+    this.password = this.passwordGeneratorService.generate(this.settings);
   }
   onSettingsChange(event: Settings) {
     this.settings = event;
   }
+  constructor(private passwordGeneratorService: PasswordGeneratorService) {}
 }

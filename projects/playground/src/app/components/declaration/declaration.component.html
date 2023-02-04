@@ -1,0 +1,4 @@
+<h3>Déclaration</h3>
+<input #revenue type="number" placeholder="Vos revenus" />
+<button (click)="onClickDeclaration(revenue.valueAsNumber)">Déclarer</button>
+<article>Vos impôts : {{ fees }} €</article>

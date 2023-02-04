@@ -1,22 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { PasswordControlComponent } from './components/password-control/password-control.component';
-import { PasswordDisplayComponent } from './components/password-display/password-display.component';
-import { PasswordSettingsComponent } from './components/password-settings/password-settings.component';
+import { PasswordGeneratorService } from './components/Services/passwordgenerator.service';
+import { PasswordGeneratorModule } from './password-generator.module';
+import { Settings } from './types';
 
+class MockPasswordGeneratorService {
+  generate(settings: Settings) {
+    return 'MOCK_PASSWORD';
+  }
+}
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        PasswordControlComponent,
-        PasswordDisplayComponent,
-        PasswordSettingsComponent,
+      declarations: [AppComponent],
+      providers: [
+        {
+          provide: PasswordGeneratorService,
+          useClass: MockPasswordGeneratorService,
+        },
       ],
-      imports: [FormsModule],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
     fixture = TestBed.createComponent(AppComponent);
     fixture.autoDetectChanges();
@@ -32,13 +38,13 @@ describe('AppComponent', () => {
     );
   });
 
-  it('should be "Nouveau mot de passe" when "Générer" button is clicked', () => {
+  it('should be "MOCK_PASSWORD" when "Générer" button is clicked', () => {
     // Arrange
     // Act
     fixture.nativeElement.querySelector('button').click();
     // Assert
     expect(fixture.nativeElement.querySelector('article')?.textContent).toBe(
-      'Nouveau mot de passe'
+      'MOCK_PASSWORD'
     );
   });
 

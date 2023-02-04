@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PasswordControlComponent } from './password-control.component';
+import { PasswordGeneratorModule } from '../../password-generator.module';
 
 @Component({
   selector: 'test',
@@ -16,7 +15,8 @@ describe('PasswordControlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordControlComponent, TestComponent],
+      declarations: [TestComponent],
+      imports: [PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestComponent);

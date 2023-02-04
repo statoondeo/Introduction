@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PasswordGeneratorModule } from '../../password-generator.module';
 
 import { PasswordDisplayComponent } from './password-display.component';
 
@@ -23,7 +24,8 @@ describe('PasswordDisplayComponent', () => {
     let fixture: ComponentFixture<EmptyTestComponent>;
     let element: HTMLElement;
     await TestBed.configureTestingModule({
-      declarations: [EmptyTestComponent, PasswordDisplayComponent],
+      declarations: [EmptyTestComponent],
+      imports: [PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EmptyTestComponent);
@@ -41,7 +43,8 @@ describe('PasswordDisplayComponent', () => {
     let fixture: ComponentFixture<FeededTestComponent>;
     let element: HTMLElement;
     await TestBed.configureTestingModule({
-      declarations: [FeededTestComponent, PasswordDisplayComponent],
+      declarations: [FeededTestComponent],
+      imports: [PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FeededTestComponent);

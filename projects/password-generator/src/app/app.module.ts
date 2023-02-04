@@ -1,20 +1,11 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PasswordDisplayComponent } from './components/password-display/password-display.component';
-import { PasswordSettingsComponent } from './components/password-settings/password-settings.component';
-import { PasswordControlComponent } from './components/password-control/password-control.component';
+import { PasswordGeneratorModule } from './password-generator.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PasswordDisplayComponent,
-    PasswordSettingsComponent,
-    PasswordControlComponent,
-  ],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent],
+  imports: [PasswordGeneratorModule],
   providers: [],
   bootstrap: [AppComponent],
 })

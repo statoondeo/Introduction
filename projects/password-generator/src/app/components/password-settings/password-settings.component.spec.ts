@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { PasswordGeneratorModule } from '../../password-generator.module';
 import { Settings } from '../../types';
 
 import { PasswordSettingsComponent } from './password-settings.component';
@@ -29,8 +30,8 @@ describe('PasswordSettingsComponent', () => {
 
   it('should have default values', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, ChangeTestComponent],
-      imports: [FormsModule],
+      declarations: [ChangeTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChangeTestComponent);
@@ -49,8 +50,8 @@ describe('PasswordSettingsComponent', () => {
   });
   it('should have inpuy values', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, DefaultTestComponent],
-      imports: [FormsModule],
+      declarations: [DefaultTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DefaultTestComponent);
@@ -69,8 +70,8 @@ describe('PasswordSettingsComponent', () => {
   });
   it('should emit event when length setting change', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, ChangeTestComponent],
-      imports: [FormsModule],
+      declarations: [ChangeTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChangeTestComponent);
@@ -92,8 +93,8 @@ describe('PasswordSettingsComponent', () => {
   });
   it('should emit event when uppercases setting change', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, ChangeTestComponent],
-      imports: [FormsModule],
+      declarations: [ChangeTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChangeTestComponent);
@@ -114,8 +115,8 @@ describe('PasswordSettingsComponent', () => {
   });
   it('should emit event when numbers setting change', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, ChangeTestComponent],
-      imports: [FormsModule],
+      declarations: [ChangeTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChangeTestComponent);
@@ -136,8 +137,8 @@ describe('PasswordSettingsComponent', () => {
   });
   it('should emit event when symbols setting change', async () => {
     await TestBed.configureTestingModule({
-      declarations: [PasswordSettingsComponent, ChangeTestComponent],
-      imports: [FormsModule],
+      declarations: [ChangeTestComponent],
+      imports: [FormsModule, PasswordGeneratorModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChangeTestComponent);
