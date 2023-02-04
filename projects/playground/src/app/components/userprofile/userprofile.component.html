@@ -1,0 +1,9 @@
+<h3 [class.hired]="isHired">{{ firstName }} {{ lastName | uppercase }}</h3>
+Métier : <strong>{{ job }}</strong>
+<button (click)="hire()">Hire</button>
+<input
+  #newFirstNameInput
+  (keydown.enter)="changeFirstName()"
+  type="text"
+  placeholder="Nouveau prénom"
+/>

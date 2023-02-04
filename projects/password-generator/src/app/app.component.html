@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Générez un mot de passe fort!</h1>
+  <div class="grid">
+    <password-display [password]="password" />
+    <div>
+      <password-settings
+        [default-settings]="settingsValues" 
+        (settings-change)="onSettingsChange($event)"
+          />
+      <hr />
+      <password-control (onGenerate)="onClickGenerate($event)" />
+    </div>
+  </div>
+</div>
